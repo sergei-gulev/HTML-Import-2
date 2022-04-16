@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
 	$('.ui-tabs').tabs();
 	
 	// Show/hide table rows based on selected radio value
-	$("input.showrow").click(function() {
+	$("input.showrow").click('a', function() {
 	        var tag = $(this).val();
 			var importing = $(this).attr('title');
 			var rowID = $(this).parents("tr").attr("id");
@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
 	    });
 	
 	// Clone table rows
-	$(".cloneTableRows").live('click', function(){
+	$(".cloneTableRows").on('click', function(){
 		var thisTableId = $(this).parents("table").attr("id");
 		var lastRow = $('#'+thisTableId + " tbody tr.clone:last");
 		var oldID = lastRow.attr("id");
